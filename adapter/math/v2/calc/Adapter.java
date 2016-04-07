@@ -14,4 +14,5 @@ public class Adapter extends Arifmetika implements Calculator{
     public int multiply(int a, int b) {
         return multiply(a,b);
     }
+
 }

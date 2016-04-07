@@ -18,4 +18,5 @@ private Arifmetika arifmetika;
     public int summa(int a, int b) {
         return arifmetika.summa(new int[] {a, b});
     }
+
 }
