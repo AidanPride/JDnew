@@ -1,8 +1,6 @@
 package Lesson4.Part2;
 
-/**
- * Created by User on 07.03.2016.
- */
+
 public class Node {
     private Object o;
     private Node node;
