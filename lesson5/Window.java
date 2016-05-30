@@ -9,9 +9,7 @@ import java.awt.image.ImageObserver;
 import java.io.File;
 import java.io.IOException;
 
-/**
- * Created by User on 17.03.2016.
- */
+
 public class Window extends JPanel {
 private Image img;
     public Window() {

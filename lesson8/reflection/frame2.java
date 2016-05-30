@@ -10,13 +10,13 @@ import java.util.*;
 public class Frame2 {
 
     public static void main(String[] args) {
-
+        Class jew = new Jewelry().getClass();
         Map<String , Object> info = new HashMap<>();
         info.put("count" , 1);
         info.put("name" , "Ne4to");
         info.put("price" , 10);
         info.put("article" , "ART15");
-        initClass(Jewelry.class , info);
+        setPrivates(jew , info);
 
         List<Object> list = new ArrayList<>();
         list.add("ART15");
@@ -24,7 +24,7 @@ public class Frame2 {
         list.add("Ne4to");
         list.add(10);
 
-        initClass(Jewelry.class , list);
+         initClass(Jewelry.class , list);
 
 
         printClassInfo(Jewelry.class);
@@ -40,7 +40,7 @@ public class Frame2 {
             System.out.println(ann.name());
         }
         else {
-            System.out.println("Sorry, annotation not find");
+            System.out.println("Sorry, annotation not found");
         }
 
     }
@@ -59,7 +59,7 @@ public class Frame2 {
         System.out.println("Class's fields is "+ Arrays.toString(c.getDeclaredFields()));
     }
 
-    public  static  <T> void initClass(Class<T> tClass , Map<String , Object> stringObjectMap){
+    public  static  <T> void setPrivates(Class<T> tClass , Map<String , Object> stringObjectMap){
         try{
             T o = tClass.newInstance();
             Field [] classFields = tClass.getDeclaredFields();
@@ -80,7 +80,7 @@ public class Frame2 {
 
     }
 
-    public static <T> void initClass (Class<T> c, List<Object> list) {
+    public static <T> T initClass (Class<T> c, List<Object> list) {
 
         try {
 
@@ -112,6 +112,7 @@ public class Frame2 {
         catch (IllegalArgumentException e) {
             e.printStackTrace();
         }
+        return (T) c;
     }
 
 }
